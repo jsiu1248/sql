@@ -56,3 +56,34 @@ Uses of View.
 5. Rename columns
 
 */
+
+/*
+CONSTRAINTS  - limit data type
+NOT NULL - tell cannot store null value
+UNIQUE - all values must be unique
+PRIMARY KEY - uniquely identify
+FOREIGN KEY - from another table
+CHECK - validate for certain condition
+DEFAULT - default value when no value
+
+PRIMARY KEY is similar to having both NOT NULL and UNIQUE
+
+*/
+
+-- Check Example
+CREATE TABLE Student
+(
+ID int(6) NOT NULL,
+NAME varchar(10) NOT NULL,
+-- the values can't be null and is greater than 18
+AGE int NOT NULL CHECK (AGE >= 18)
+);
+
+-- Default example
+CREATE TABLE Student
+(
+ID int(6) NOT NULL,
+NAME varchar(10) NOT NULL,
+-- the default age will be 18 if no value
+AGE int DEFAULT 18
+);
