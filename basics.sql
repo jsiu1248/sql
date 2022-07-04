@@ -87,3 +87,24 @@ NAME varchar(10) NOT NULL,
 -- the default age will be 18 if no value
 AGE int DEFAULT 18
 );
+
+/*Roles
+
+Connect - table, view, synonym, sequence, session
+Resource - create procedure, sequences, create tables, triggers
+DBA - all system privileges
+
+The DBA creates the role
+*/
+CREATE ROLE manager;
+
+-- GRANT to assign users to roles and privileges
+GRANT create table, create view
+TO manager;
+
+GRANT manager TO SAM, STARK;
+-- Or you can REVOKE roles and permisions
+
+/*Questions
+What is a synonym?
+What is a session?*/
