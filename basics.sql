@@ -30,4 +30,29 @@ DCL - Data Control Language: control access to data
 
 GRANT, REVOKE
 
+Views: virtual tables
+There are multiple rules for updating views. Which is weird...
+1. Can't include GROUP BY
+2. Can't include DISTINCT.
+3. NOT NULL Values
+4. Not nested queries.
+5. Not Multiple tables.
+
+You can replace a view.
+Insert row into a view.
  */
+
+INSERT INTO view_name(column1, column2 , column3,..)
+VALUES(value1, value2, value3..);
+
+/*
+WITH CHECK OPTION: prevent inserting of rows if where condition is not satisfied.
+
+Uses of View.
+1. Restricting Access
+2. Hiding data complexity
+3. Simplfy for user.
+4. Store complex queries
+5. Rename columns
+
+*/
