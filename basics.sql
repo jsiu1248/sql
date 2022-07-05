@@ -105,6 +105,65 @@ TO manager;
 GRANT manager TO SAM, STARK;
 -- Or you can REVOKE roles and permisions
 
+
+/*INDEX - increase speed by using pointers
+Can reduce IO.
+
+An index helps to speed up select queries and where clauses, but it slows down data input, with the update and the insert statements.
+
+Indexes when:
+1. wide range of values
+2. little nulls.
+3. lots of joins or where clauses
+
+Indexes when not:
+1. table is small.
+2. columns not used
+3. column updated a lot
+
+You can remove, rename, and alter indexes.
+
+*/
+
+-- index is named index for multiple columns
+CREATE INDEX index
+ ON TABLE (column1, column2,.....);
+
+-- will show you all of the indexes in server
+ select * from USER_INDEXES;
+
+/*
+Sequences is like rep in R.
+It generates ints.
+
+*/
+CREATE SEQUENCE sequence_name
+START WITH initial_value
+INCREMENT BY increment_value
+MINVALUE minimum value
+MAXVALUE maximum value
+-- cycle: when it hits it's limit then it will recycle
+--nocycle: it will throw error when limit hits.
+CYCLE|NOCYCLE ;
+
+-- Query Processing looks like https://www.geeksforgeeks.org/sql-query-processing/
+-- DDL is never optimized unless there is a DML component
+
+/*
+CTE: Temp result set that you are reference
+After you’ve run your statement, the CTE result set is not available to other statements.
+
+*/
+
 /*Questions
 What is a synonym?
-What is a session?*/
+What is a session?
+What is disk input and output?
+Hard Parse vs Soft Parse
+Row Source Generation
+::=
+
+Notes
+Sequences may be useful for golf app.
+i.e. INSERT into students VALUES(sequence_1.nextval,'Ramesh');
+*/
