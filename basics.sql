@@ -188,7 +188,36 @@ Lost writes and other forms of data loss
 
 Advantages
 1. High Scalability
--
+- sharding for horizontal scaling which means partitioning of data onto multiple machines
+- vertical scaling means adding more resources
+
+2. High Availability
+- auto replication feature in case of failures
+
+Disadvantages
+1. Narrow Focus
+- Mainly designed for storage
+2. Open Source
+- No reliable standard
+3. Management Challenges
+- known for being challenging to install and hectic to managed
+4. GUI not available
+5. Backup
+- MongoDB has no approach for the backup of data consistently
+6. Large document size
+- Some large JSON files
+
+Types:
+1. MongoDB - document based
+2. Key value: Redis
+Tabular: Hbase
+
+When:
+1. storing large amounts of data
+2. relationship is not that important
+3. not structured
+4. Constraints and joins not needed
+5. Continued growth
 
 
 */
