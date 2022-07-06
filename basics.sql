@@ -153,6 +153,44 @@ CYCLE|NOCYCLE ;
 CTE: Temp result set that you are reference
 After you’ve run your statement, the CTE result set is not available to other statements.
 
+Recursive CTE - One that references itself.
+i.e. list of employees. Then, reference to that manager
+https://www.geeksforgeeks.org/cte-in-sql/
+*/
+
+/*
+Trigger: Stored procedure that is invoked when event occurs.
+create trigger [trigger_name]
+
+-- when will the trigger be executed
+[before | after]
+{insert | update | delete}  
+on [table_name]
+
+-- row-level trigger
+[for each row]
+
+-- the operation that will happen
+[trigger_body]
+
+i.e. triggers can increase/decrease column where row is inserted
+*/
+
+/*
+NoSQL: non relational - 1960s.
+Used in real-time web apps
+Speed and partition tolerance
+
+Con:
+No ACID (Atomicity, Consistency, Isolation ,Durability)
+May read non accurately
+Lost writes and other forms of data loss
+
+Advantages
+1. High Scalability
+-
+
+
 */
 
 /*Questions
@@ -162,8 +200,13 @@ What is disk input and output?
 Hard Parse vs Soft Parse
 Row Source Generation
 ::=
+How does recursive CTE work?
+X/Open XA standards and ACID transactions for distributed transaction processing
+
 
 Notes
 Sequences may be useful for golf app.
 i.e. INSERT into students VALUES(sequence_1.nextval,'Ramesh');
+Could I have used triggers in my capstone?
+
 */
