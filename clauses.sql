@@ -44,3 +44,23 @@ SELECT * FROM Student WHERE ADDRESS LIKE '%[A-C]%';
 -- not containg a,b,c
 SELECT * FROM Student WHERE ADDRESS LIKE '%[^A-C]%';
 
+-- USING: there maybe multiple columns with the same name. But, this clarifies it
+-- Kind of feels like it is ON
+
+/*
+MERGE: insert, update, delete
+Requires a source table to do this on target table
+https://www.geeksforgeeks.org/merge-statement-sql-explained/
+
+
+DROP vs TRUNCATE
+- Truncate is really fast and deletes and then retains structure in memory
+- Drop deletes full structure
+
+*/
+
+
+
+/*Questions
+Is there a difference between EXCEPT AND INTERSECT?
+Is USING like ON*/
