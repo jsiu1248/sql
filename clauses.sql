@@ -27,3 +27,20 @@ EXCEPTALL - retains all of the duplicates
 EXCEPT VS NOT IN
 EXCEPT removes all duplicates in the final results vs
 NOT IN retains the duplicates*/
+
+/*Arithmetic
+If you do anything to NULL, it is always null
+
+Wildcard
+_ substitutes one character
+[] range of characters
+[^] not match set or range
+
+i.e. containing a,b, or c
+*/
+
+SELECT * FROM Student WHERE ADDRESS LIKE '%[A-C]%';
+
+-- not containg a,b,c
+SELECT * FROM Student WHERE ADDRESS LIKE '%[^A-C]%';
+
