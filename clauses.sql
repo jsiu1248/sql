@@ -57,10 +57,58 @@ DROP vs TRUNCATE
 - Truncate is really fast and deletes and then retains structure in memory
 - Drop deletes full structure
 
+ALL: select all tuples of select and compares a value to every other value in subquery
+Used with SELECT, WHERE, and HAVING
+
+Find the OrderID whose maximum Quantity among all product of that OrderID is greater than average quantity of all OrderID.
+*/
+SELECT OrderID
+FROM OrderDetails 
+GROUP BY OrderID 
+HAVING max(Quantity) > ALL (SELECT avg(Quantity) 
+                            FROM OrderDetails 
+                            GROUP BY OrderID);
+
+/*
+ANY: compares a value to each value in list and is true if the result contains at least one row
+
+Finds any records in the OrderDetails table that Quantity = 9*/
+
+SELECT ProductName
+FROM Products
+WHERE ProductID = ANY (SELECT ProductID
+                       FROM OrderDetails
+                       WHERE Quantity = 9);
+
+/*
+EXISTS: check whether results of subquery is empty
+To fetch the first and last name of the customers who placed atleast one order.
+*/
+
+SELECT fname, lname
+FROM Customers 
+WHERE EXISTS (SELECT * 
+              FROM Orders 
+              WHERE Customers.customer_id = Orders.c_id);
+
+/*GROUP BY: arrange data into groups
+GROUP BY is after WHERE
+GROUP BY is before ORDER BY
+
+Group By multiple columns: Group by multiple column is say for example,
+GROUP BY column1, column2.
+This means to place all the rows with same
+values of both the columns column1 and column2 in one group.
+
+HAVING: place conditions with aggregate functions
+
 */
 
 
 
 /*Questions
 Is there a difference between EXCEPT AND INTERSECT?
-Is USING like ON*/
+Is USING like ON
+For the OrderID example, is ALL needed?
+Is ANY the same as IN?
+*/
