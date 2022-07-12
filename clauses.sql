@@ -102,9 +102,32 @@ values of both the columns column1 and column2 in one group.
 
 HAVING: place conditions with aggregate functions
 
+UNION: combine separate results
+1. must be in the same order, same number and same data type
+2. UNION just takes distinct
+3. UNION ALL just duplicates too
+
+TOP: fetches a limited number of rows.
+1. Good for large databases
+2. Can do TOP value percent to return percentage of rows
+MySQL uses LIMIT
+Oracle uses ROWNUM<=value
+
+DELETE: deletes single/multiple records from table
+
+INSERT INTO:
+1. columns not filled are filled with NULL
+To insert multiple rows in a table using Single SQL Statement
 */
 
+INSERT INTO table_name(Column1,Column2,Column3,.......)
+VALUES (Value1, Value2,Value3,.....),
+        (Value1, Value2,Value3,.....),
+         (Value1, Value2,Value3,.....),
+         ............................. ;
 
+/*
+*/
 
 /*Questions
 Is there a difference between EXCEPT AND INTERSECT?
@@ -112,3 +135,4 @@ Is USING like ON
 For the OrderID example, is ALL needed?
 Is ANY the same as IN?
 */
+
