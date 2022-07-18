@@ -127,12 +127,28 @@ VALUES (Value1, Value2,Value3,.....),
          ............................. ;
 
 /*
+DESCRIBE: look at the structure of the table
+It includes the column name and column types
 */
+DESCRIBE one;
+
+/*UNIQUE: checks if subquery has distinct results
+- evaluates true on empty substring
+- returns trues when duplicates have null
+*/
+
+SELECT table.ID
+FROM  table
+WHERE UNIQUE (SELECT table2.ID
+              FROM table2
+              WHERE table.ID = table2.ID);
 
 /*Questions
 Is there a difference between EXCEPT AND INTERSECT?
 Is USING like ON
 For the OrderID example, is ALL needed?
 Is ANY the same as IN?
+What is the difference between UNIQUE and DISTINCT?
+        - UNIQUE ensures all values in a column are different while distinct removes all duplicate record
 */
 
